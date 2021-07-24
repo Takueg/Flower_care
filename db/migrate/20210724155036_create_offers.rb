@@ -3,10 +3,11 @@ class CreateOffers < ActiveRecord::Migration[6.0]
     create_table :offers do |t|
       t.string :title
       t.string :image_url
-      t.string :adress
+      t.string :address
       t.text :description
+      t.date :date
       t.integer :price
-      t.references :user_id, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
