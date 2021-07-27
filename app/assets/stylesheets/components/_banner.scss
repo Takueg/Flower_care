@@ -1,13 +1,14 @@
+body, html {
+  height: 100%;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 150px 0;
-}
-
-.banner-button {
-  margin-top: 16px;
-  display: flex;
-  justify-content: center;
+  height: 100%;
 }
 
 .banner h1 {
@@ -18,7 +19,11 @@
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 28px;
   color: #80c87f;
   opacity: .7;
 }
+
+
+
+
