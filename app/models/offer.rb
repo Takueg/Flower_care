@@ -5,6 +5,7 @@ class Offer < ApplicationRecord
   validates :address, presence: true
   validates :description, length: {minimum: 15}
   validates :instruction, presence: true
+  # validates :date, presence: true
 
 
 end
