@@ -5,16 +5,18 @@
   </div>
 </div>
 
-<ul>
-  <% @offers.each do |offer| %>
-<<<<<<< HEAD
-    <li><%= url("offer.image_url") %></li>
-    <li><%= link_to offer.address, offers_path(offer) %></li>
-    <li><%= offer.price %></li>
-    <li><%= offer.description %></li>
-    <li><%= offer.instruction %></li>
-=======
-    <li><%= link_to offer.address, offer_path(offer) %></li>
->>>>>>> master
-  <% end %>
-</ul>
+<% @offers.each do |offer| %>
+  <div class="card-offer">
+    <img src=<%= offer.image_url %> />
+    <div class="card-offer-infos">
+      <div>
+        <h2><%= link_to offer.address, offer_path(offer) %></h2>
+        <p><%= offer.description %></p>
+      </div>
+      <h2 class="card-offer-pricing"><%= offer.date %> | <%= offer.price %>€</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-offer-user avatar-bordered" />
+    </div>
+  </div>
+<% end %>
+
+
