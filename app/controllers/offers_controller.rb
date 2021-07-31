@@ -15,17 +15,19 @@ class OffersController < ApplicationController
     end
 
     def create
-        @offer = Offer.new(params[offer_params])
-        @offer.user = current_user
-        @offer.save
+      @offer = Offer.new(offer_params)
+      @offer.user = current_user
+      if @offer.save
         redirect_to offer_path(@offer)
-
+      else
+        render :new
       end
+    end
 
     private
 
   def offer_params
-    params.require(:offer).permit(:title, :description, :date, :image_url, :address, :instruction)
+    params.require(:offer).permit(:title, :description, :date, :image_url, :address, :instruction, :price)
   end
 
   def set_offer

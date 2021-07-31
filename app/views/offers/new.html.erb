@@ -1,3 +1,24 @@
-<h1>What are the specs of your new offer?</h1>
+<!-- <h1>What are the specs of your new offer?</h1>
 <%= render "form", offer: @offer %>
-<%= link_to 'Back', offers_path %>
+ -->
+
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create a new offer</h3>
+        <%= simple_form_for @offer do |f| %>
+          <%= f.input :title %>
+          <%= f.input :address %>
+          <%= f.input :description %>
+          <%= f.input :instruction %>
+          <%= f.input :date %>
+          <%= f.input :price %>
+          <%= f.input :image_url, as: :file  %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Back', offers_path, class: 'btn btn-flat' %>
+</div>
