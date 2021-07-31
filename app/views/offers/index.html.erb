@@ -1,4 +1,9 @@
-<h1>Have a look on all the offers we have</h1>
+<div class="hero-image">
+  <div class="hero-text">
+    <h1>Have a look on all the offers we have</h1>
+  </div>
+</div>
+
 <ul>
   <% @offers.each do |offer| %>
     <li><%= link_to offer.name, offer_path(offer) %></li>
