@@ -13,8 +13,8 @@
 # 2 create offers
 
 puts "Cleaning database..."
-User.destroy_all
 Offer.destroy_all
+User.destroy_all
 
 puts "creating users"
 
@@ -44,7 +44,7 @@ offer1 = Offer.new(
     image_url: "https://res.cloudinary.com/dvokz7e90/image/upload/v1627723263/Flower%20Care/seed_01_photo_03_jl4gey.jpg",
     address: Faker::Address.street_address,
     description: Faker::Lorem.sentence,
-    instructions: Faker::Lorem.sentences,
+    instruction: Faker::Lorem.sentences,
     price: "15€",
     date: Faker::Date.in_date_period,
   )
