@@ -9,6 +9,9 @@
 # we need to create 5 offers
 # with a title, image_url,address, description, instructions, date and price
 
+# 1 create users
+# 2 create offers
+
 puts "Cleaning database..."
 Offer.destroy_all
 
