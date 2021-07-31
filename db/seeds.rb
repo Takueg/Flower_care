@@ -13,18 +13,45 @@
 # 2 create offers
 
 puts "Cleaning database..."
+User.destroy_all
 Offer.destroy_all
+
+puts "creating users"
+
+user1 = User.create(
+    name: "Takudzwa Gwindingwi",
+    email: "takueg@gmail.com",
+    password: "123456",
+    phone_number: Faker::PhoneNumber.cell_phone
+  )
+
+puts "creeated user #{user1.name}"
+
+user2 = User.create(
+    name: "Torsten Tyras",
+    email: "tyras.torsten@gmail.com",
+    password: "123456",
+    phone_number: Faker::PhoneNumber.cell_phone
+  )
+
+puts "creeated user #{user2.name}"
+puts "created #{user1} and is valid #{user1.valid?}"
+puts "created #{user2} and is valid #{user2.valid?}"
 
 puts "creating offers"
 
+offer1 = Offer.new(
+    image_url: "https://res.cloudinary.com/dvokz7e90/image/upload/v1627723263/Flower%20Care/seed_01_photo_03_jl4gey.jpg",
+    address: Faker::Address.street_address,
+    description: Faker::Lorem.sentence,
+    instructions: Faker::Lorem.sentences,
+    price: "15€",
+    date: Faker::Date.in_date_period,
+  )
 
-images = []
+offer1.user = user2
 
-images.each do |image|
-  5.times do
-    Offer.new(
-      image_url: image,
-      description: Faker::Lorem.paragraph,
-      )
-  end
-end
+offer1.save
+
+puts "created #{offer1.address} and is valid #{offer1.valid?}"
+
