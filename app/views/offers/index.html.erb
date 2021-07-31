@@ -7,6 +7,10 @@
 
 <ul>
   <% @offers.each do |offer| %>
+    <li><%= url("offer.image_url") %></li>
     <li><%= link_to offer.address, offers_path(offer) %></li>
+    <li><%= offer.price %></li>
+    <li><%= offer.description %></li>
+    <li><%= offer.instruction %></li>
   <% end %>
 </ul>
