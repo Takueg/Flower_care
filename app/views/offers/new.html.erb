@@ -6,15 +6,15 @@
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
-        <h3>Create a new offer</h3>
+        <h3>New offer</h3>
         <%= simple_form_for @offer do |f| %>
-          <%= f.input :title, :label => 'Title of your offer:', :required => true %>
-          <%= f.input :address, :label => 'Your address:' %>
-          <%= f.input :description, :label => 'Desrcibe your place:', :required => true %>
-          <%= f.input :instruction, :label => 'Instructions to care for your plants:' %>
+          <%= f.input :title, :label => 'Title:', :required => true %>
+          <%= f.input :address, :label => 'Address:' %>
+          <%= f.input :description, :label => 'Describe your place:', :required => true %>
+          <%= f.input :instruction, :label => 'Instructions for caring for the plants:' %>
           <%= f.input :date, :label => 'Beginning of your vacation:', :required => true %>
           <%= f.input :price, input_html: { min: '0' }, :label => 'Price you want to pay:', :hint => "prices are in €", :required => true %>
-          <%= f.input :image_urls, as: :file, input_html: { multiple: true }, :label => 'Please upload an image of your plants:'  %>
+          <%= f.input :image_urls, as: :file, input_html: { multiple: true }, :label => 'Please upload images of your plants:'  %>
           <%= f.submit class: 'btn btn-flat' %>
         <% end %>
       </div>
