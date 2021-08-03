@@ -1,12 +1,9 @@
-<%= cl_image_tag @offer.image_url.key, height: 300, width: 400, crop: :fill %>
 
-<!-- <div class="offer-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= @offer.image_url.attached? ? cl_image_path(@offer.image_url.key) : asset_path('offer_background.jpg') %>)">
-    <h1><%= @offer.title %></h1>
-  </div> -->
+<% @offer.image_urls.each do |image_url| %>
+  <%= cl_image_tag image_url.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 
-<!-- <div class="offer-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @offer.image_url  %>);">
-</div>
-<p id="notice"><%= notice %></p> -->
+<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Address:</strong>

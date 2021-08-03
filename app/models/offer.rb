@@ -1,7 +1,7 @@
 class Offer < ApplicationRecord
   belongs_to :user
   has_many :bookings
-  has_one_attached :image_url
+  has_many_attached :image_urls
 
 # validates :title, length: {minimum: 15}
   validates :address, presence: true
