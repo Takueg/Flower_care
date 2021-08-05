@@ -6,7 +6,7 @@
 </div>
 
 <% @offers.each do |offer| %>
-  <div class="card-offer">
+  <div class="card-offer d-flex">
     <img src=<%= offer.image_url %> />
     <div class="card-offer-infos">
       <div>
@@ -16,7 +16,13 @@
       <h2 class="card-offer-pricing"><%= offer.date %> | <%= offer.price %>€</h2>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-offer-user avatar-bordered" />
     </div>
+    <div id="map"
+       style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 <% end %>
+  
 
 
