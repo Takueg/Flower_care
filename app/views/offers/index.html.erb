@@ -11,7 +11,7 @@
 <div class="container mb-5">
   <div class="row my-2">
     <% @offers.each do |offer| %>
-      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+      <div class="col-12 col-sm-6 mb-4">
         <div class="bg-white rounded shadow h-100">
           <% if offer.image_urls.attached? %>
             <%= cl_image_tag offer.image_urls.first.key, width: 540, height: 300, crop: :fill, class: 'index-img rounded-top' %>
