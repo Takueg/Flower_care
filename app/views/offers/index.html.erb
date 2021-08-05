@@ -5,10 +5,36 @@
   </div>
 </div>
 
+<div class="container mb-5">
+  <div class="row my-2">
+    <% @offers.each do |offer| %>
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="bg-white rounded shadow h-100">
+          <% if offer.image_urls.attached? %>
+            <%= cl_image_tag offer.image_urls.first.key, width: 540, height: 300, crop: :fill, class: 'index-img rounded-top' %>
+          <% end %>
+          <div class="p-3 rounded-bottom d-flex flex-column">
+            <strong class="text-link"><%= link_to offer.title, offer_path(offer) %> <span class="text-muted font-weight-normal"> - <%= offer.date %> </span></strong>
+            <small class="text-muted"><%= offer.address %></small>
+            <div class="d-flex align-items-end justify-content-between pt-4">
+              <div>
+                <i></i><small class="flex-grow-1"> </small>
+              </div>
+              <span class="text-right flex-shrink-0 font-weight-big text-muted"><%= offer.price %> €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
 <% @offers.each do |offer| %>
   <div class="card-offer">
     <% if offer.image_urls.attached? %>
-      <%= cl_image_tag offer.image_urls.first.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag offer.image_urls.first.key, crop: :fill %>
     <% end %>
     <div class="card-offer-infos">
       <div>
