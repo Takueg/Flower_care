@@ -5,6 +5,9 @@
   </div>
 </div>
 
+
+<%# WIP-cards from Lena %>
+
 <div class="container mb-5">
   <div class="row my-2">
     <% @offers.each do |offer| %>
@@ -14,7 +17,7 @@
             <%= cl_image_tag offer.image_urls.first.key, width: 540, height: 300, crop: :fill, class: 'index-img rounded-top' %>
           <% end %>
           <div class="p-3 rounded-bottom d-flex flex-column">
-            <strong class="text-link"><%= link_to offer.title, offer_path(offer) %> <span class="text-muted font-weight-normal"> - <%= offer.date %> </span></strong>
+            <strong><%= link_to offer.title, offer_path(offer) %> <span class="text-muted font-weight-normal"> - <%= offer.date %> </span></strong>
             <small class="text-muted"><%= offer.address %></small>
             <div class="d-flex align-items-end justify-content-between pt-4">
               <div>
@@ -30,6 +33,8 @@
 </div>
 
 
+
+<%# Cards from Jorge %>
 
 <% @offers.each do |offer| %>
   <div class="card-offer">
