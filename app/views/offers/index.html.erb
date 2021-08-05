@@ -7,11 +7,13 @@
 
 <% @offers.each do |offer| %>
   <div class="card-offer">
-    <img src=<%= offer.image_url %> />
+    <% if offer.image_urls.attached? %>
+      <%= cl_image_tag offer.image_urls.first.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
     <div class="card-offer-infos">
       <div>
         <h2><%= link_to offer.address, offer_path(offer) %></h2>
-        <p><%= offer.description %></p>
+        <p><%= offer.title %></p>
       </div>
       <h2 class="card-offer-pricing"><%= offer.date %> | <%= offer.price %>€</h2>
       <%= image_tag "avatar_01", class: "card-offer-user avatar-bordered" %>
