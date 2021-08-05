@@ -6,15 +6,17 @@
 </div>
 
 <% @offers.each do |offer| %>
-  <div class="card-offer d-flex">
-    <img src=<%= offer.image_url %> />
+  <div class="card-offer">
+    <% if offer.image_urls.attached? %>
+      <%= cl_image_tag offer.image_urls.first.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
     <div class="card-offer-infos">
       <div>
         <h2><%= link_to offer.address, offer_path(offer) %></h2>
-        <p><%= offer.description %></p>
+        <p><%= offer.title %></p>
       </div>
       <h2 class="card-offer-pricing"><%= offer.date %> | <%= offer.price %>€</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-offer-user avatar-bordered" />
+      <%= image_tag "avatar_01", class: "card-offer-user avatar-bordered" %>
     </div>
     <div id="map"
        style="width: 100%; height: 600px;"
@@ -23,6 +25,3 @@
     </div>
   </div>
 <% end %>
-  
-
-
