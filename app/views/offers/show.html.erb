@@ -25,6 +25,10 @@
   <%= @offer.date %>
 </p>
 
+<%= simple_form_for [ @offer, @booking ] do |f| %>
+    <%= f.submit "Create booking", class: "btn btn-primary" %>
+<% end %>
+
 <%= link_to 'Back', offers_path %>
 
 <div class="d-flex justify-content-between my-4">
