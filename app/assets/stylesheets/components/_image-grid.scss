@@ -1,53 +1,29 @@
 .image-grid {
   display: flex;
-  height: 400px;
+  height: 480px;
+  border-radius: 18px;
 }
 
 .large-image {
+  flex-grow: 1;
+  height: 480px;
   width: 100%;
-  height: 400px;
-  padding-right: 10px;
-
-  img {
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-  }
+  margin-right: 10px;
+  background-size: cover;
+  background-position: center;
 }
 
 .small-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  height: 400px;
+  height: 480px;
   grid-gap: 10px;
 
-  img {
-    height: 195px;
-    width: 100%;
+  .small-image {
     background-size: cover;
     background-position: center;
+    height: 235px;
+    width: 250px;
   }
 }
-
-
-// .grid-image {
-//   background-size: cover;
-//   background-position: center;
-// }
-
-// .grid-image img {
-//   width: 100%;
-// }
-
-// .large-grid-image {
-//   width: 100%;
-//   height: 200px;
-//   grid-column: 0/2;
-//   background-size: cover;
-//   background-position: center;
-// }
-
-// .large-grid-image img {
-//   height: 100%;
-// }
