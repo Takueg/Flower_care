@@ -39,8 +39,35 @@
 }
 
 .booking-card {
-  background-color: $grey;
   margin-top: 48px;
-  width: 320px;
   height: 240px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 24px;
+
+    h4 {
+      padding-bottom: 24px;
+      border-bottom: 1px solid #ddd;
+      margin: 0;
+    }
+
+    .price-info {
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+
+
+        p {
+          margin: 0;
+        }
+
+        h2 {
+          margin: 0;
+        }
+
+
+      }
 }

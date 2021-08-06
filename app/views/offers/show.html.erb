@@ -22,26 +22,36 @@
 
 <!-- middle section -->
 
-<div class="middle-section mb-5">
-  <div class="offer-information">
-    <div class="offer-details mt-5 pb-3">
-      <h4><%= @offer.user.name %> has 15 plants</h4>
-      <p class="mt-3"><%= @offer.description %></p>
-    </div>
-    <div class="offer-instruction mt-3">
-      <h4 class="mt-3">Instructions</h4>
-      <p class="mt-3"><%= @offer.instruction %></p>
+<div class="row mb-5 middle-section">
+  <div class="col-6">
+    <div class="offer-information">
+      <div class="offer-details mt-5 pb-3">
+        <h4><%= @offer.user.name %> has 15 plants</h4>
+        <p class="mt-3"><%= @offer.description %></p>
+      </div>
+      <div class="offer-instruction mt-3">
+        <h4 class="mt-3">Instructions</h4>
+        <p class="mt-3"><%= @offer.instruction %></p>
+      </div>
     </div>
   </div>
 
   <!-- booking card -->
 
-  <div class="booking-card">
-    <%#= simple_form_for [ @offer, @booking ] do |f| %>
-        <%#= f.submit "Create booking", class: "btn btn-primary" %>
-    <%# end %>
-    <h4>insert booking card in this div</h4>
+  <div class="col-4 booking-card">
+      <%#= simple_form_for [ @offer, @booking ] do |f| %>
+          <%#= f.submit "Create booking", class: "btn btn-primary" %>
+      <%# end %>
+      <h4 class="text-center"><%= @offer.date %></h4>
+      <div class="row price-info">
+        <div class="price-description col-7">
+          <p>If plants are still alive you will be rewarded with:</p>
+        </div>
+        <div class="price col-3">
+          <h2> <%= @offer.price %>€</h2>
+        </div>
+          <a href="#" class="btn btn-block booking-button">Book this job</a>
+      </div>
   </div>
-
 </div>
 

@@ -13,6 +13,10 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: white;
-    margin: 0 16px;
+  color: white;
+  margin: 0 16px;
+
+  &:hover {
+    color: $marine-blue
+  }
 }
