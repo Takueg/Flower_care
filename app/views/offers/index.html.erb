@@ -6,6 +6,23 @@
 </div>
 
 
+<%# Search form from Jonathan %>
+
+<div class="col-sm-2 pt-4 center_div">
+<%= form_tag offers_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find available offers"
+  %>
+  <%= submit_tag "Search", class: "btn btn-dark width-button" %>
+<% end %>
+</div>
+
+
+
+
+
 <%# WIP-cards from Lena %>
 
 <div class="container mb-5">
