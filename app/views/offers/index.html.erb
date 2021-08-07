@@ -12,15 +12,15 @@
   <div class="cards">
       <% @offers.each do |offer| %>
         <div class="card-trip">
-          <%= image_tag offer.image_url %>
+          <% if offer.image_urls.attached? %>
+              <%= cl_image_tag offer.image_urls.first.key, crop: :fill %>
+          <% end %>
           <div class="card-trip-infos">
             <div>
               <h2><%= offer.title %></h2>
               <p><%= offer.description %></p>
             </div>
             <h2 class="card-trip-pricing">€<%= offer.price %></h2>
-            <%#= cl_image_tag offer.image_url.first.key, class: 'card-trip-user avatar-bordered' %>
-            <%= image_tag offer.image_url, class: 'card-trip-user avatar-bordered'  %>
           </div>
         </div>
       <% end %>
