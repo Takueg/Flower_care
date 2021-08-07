@@ -42,7 +42,7 @@ puts "creating offers"
 
 offer1 = Offer.new(
     image_url: "https://res.cloudinary.com/dvokz7e90/image/upload/v1627723263/Flower%20Care/seed_01_photo_03_jl4gey.jpg",
-    address: Faker::Address.street_address,
+    address: "Rudi-Dutschke-Straße 26, 10969 Berlin, Germany",
     description: Faker::Lorem.sentence,
     instruction: Faker::Lorem.sentences,
     price: "15€",
