@@ -50,7 +50,9 @@
         <div class="price col-3">
           <h2> <%= @offer.price %>€</h2>
         </div>
-          <a href="#" class="btn btn-block booking-button">Book this job</a>
+          <%= simple_form_for [ @offer, @booking ] do |f| %>
+              <%= f.submit "Book this job", class: "btn btn-block booking-button" %>
+          <% end %>
       </div>
   </div>
 </div>
