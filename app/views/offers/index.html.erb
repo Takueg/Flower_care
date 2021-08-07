@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <div class="hero-image">
   <div class="hero-text">
    <h1>Flowers deserve love too.</h1>
@@ -6,6 +12,18 @@
   </div>
 </div>
 
+<%# Search form from Jonathan %>
+
+<div class="col-sm-12 col-lg-6 center_div ">
+<%= form_tag offers_path, method: :get, class: "searchform" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control searchinput",
+    placeholder: "Find available offers"
+  %>
+  <%= submit_tag "Search", class: "btn btn-dark width-button" %>
+<% end %>
+</div>
 
 <%# WIP-cards from Lena %>
 <h2 class="section-heading">Explore all flower caring job offers</h2>
