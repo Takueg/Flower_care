@@ -26,7 +26,6 @@ gem 'devise'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'geocoder'
-gem 'dotenv-rails', groups: [:development, :test]
 
 #cloudinary
 gem 'cloudinary', '~> 1.16.0'

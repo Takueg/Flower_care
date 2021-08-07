@@ -1,0 +1,29 @@
+.image-grid {
+  display: flex;
+  height: 480px;
+  border-radius: 18px;
+}
+
+.large-image {
+  flex-grow: 1;
+  height: 480px;
+  width: 100%;
+  margin-right: 10px;
+  background-size: cover;
+  background-position: center;
+}
+
+.small-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 480px;
+  grid-gap: 10px;
+
+  .small-image {
+    background-size: cover;
+    background-position: center;
+    height: 235px;
+    width: 250px;
+  }
+}
