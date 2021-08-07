@@ -8,51 +8,26 @@
 
 <%# WIP-cards from Lena %>
 
-<div class="container mb-5">
-  <div class="row my-2">
-    <% @offers.each do |offer| %>
-      <div class="col-12 col-sm-6 mb-4">
-        <div class="bg-white rounded shadow h-100">
+<div class="wrapper">
+  <div class="cards">
+      <% @offers.each do |offer| %>
+        <div class="card-trip">
           <% if offer.image_urls.attached? %>
-            <%= cl_image_tag offer.image_urls.first.key, width: 540, height: 300, crop: :fill, class: 'index-img rounded-top' %>
+              <%= cl_image_tag offer.image_urls.first.key, crop: :fill %>
           <% end %>
-          <div class="p-3 rounded-bottom d-flex flex-column">
-            <strong><%= link_to offer.title, offer_path(offer) %> <span class="text-muted font-weight-normal"> - <%= offer.date %> </span></strong>
-            <small class="text-muted"><%= offer.address %></small>
-            <div class="d-flex align-items-end justify-content-between pt-4">
-              <div>
-                <i></i><small class="flex-grow-1"> </small>
-              </div>
-              <span class="text-right flex-shrink-0 font-weight-big text-muted"><%= offer.price %> €</span>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= offer.title %></h2>
+              <p><%= offer.description %></p>
             </div>
+            <h2 class="card-trip-pricing">€<%= offer.price %></h2>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+  </div>
+
+  <div id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-
-
-
-<%# Cards from Jorge %>
-
-<% @offers.each do |offer| %>
-  <div class="card-offer">
-    <% if offer.image_urls.attached? %>
-      <%= cl_image_tag offer.image_urls.first.key, crop: :fill %>
-    <% end %>
-    <div class="card-offer-infos">
-      <div>
-        <h2><%= link_to offer.address, offer_path(offer) %></h2>
-        <p><%= offer.title %></p>
-      </div>
-      <h2 class="card-offer-pricing"><%= offer.date %> | <%= offer.price %>€</h2>
-      <%= image_tag "avatar_01", class: "card-offer-user avatar-bordered" %>
-    </div>
-    <div id="map"
-       style="width: 100%; height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
-<% end %>
