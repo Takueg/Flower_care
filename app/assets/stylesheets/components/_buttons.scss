@@ -25,3 +25,12 @@
     }
 
 }
+
+
+.swal-button {
+  background-color: $dark-green;
+
+    &:hover {
+      background-color: $marine-blue !important;
+    }
+}
