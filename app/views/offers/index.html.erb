@@ -6,8 +6,9 @@
 
 <div class="hero-image">
   <div class="hero-text">
-    <h1>All available offers in your area</h1>
-    <p>View offers and choose which ones to water</p>
+   <h1>Flowers deserve love too.</h1>
+   <p class="p-3">We let you earn money by taking care of other people's plants while they
+   are away. We also make sure your plant babies are taken care off while you are away from your home.'</p>
   </div>
 </div>
 
@@ -25,20 +26,20 @@
 </div>
 
 <%# WIP-cards from Lena %>
-
+<h2 class="section-heading">Explore all flower caring job offers</h2>
 <div class="wrapper">
   <div class="cards">
       <% @offers.each do |offer| %>
+
         <div class="card-trip">
           <% if offer.image_urls.attached? %>
               <%= cl_image_tag offer.image_urls.first.key, crop: :fill %>
           <% end %>
           <div class="card-trip-infos">
             <div>
-              <h2><%= offer.title %></h2>
-              <p><%= offer.description %></p>
+              <h4><%= link_to offer.address, offer_path(offer) %></h4>
             </div>
-            <h2 class="card-trip-pricing">€<%= offer.price %></h2>
+            <h4 class="card-trip-pricing">€<%= offer.price %></h4>
           </div>
         </div>
       <% end %>

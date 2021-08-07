@@ -9,6 +9,11 @@ h4 {
   font-size: 22px;
 }
 
+h1 {
+  font-weight: 600;
+  font-size: 55px;
+}
+
 p {
   font-size: 14px;
 }
@@ -17,6 +22,9 @@ body {
   color: $dark-green;
   background-color: white;
 }
+
+.section-heading {
+  margin: 40px;
 
 .center_div{
     margin: 0 auto;
