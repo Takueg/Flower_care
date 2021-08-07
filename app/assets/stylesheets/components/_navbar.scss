@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $dark-green;
+  padding: 12px 32px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,6 +12,11 @@
   width: 150px;
 }
 
-.nav-link {
-  color: black;
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  margin: 0 16px;
+
+  &:hover {
+    color: $marine-blue
+  }
 }

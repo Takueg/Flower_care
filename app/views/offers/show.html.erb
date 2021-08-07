@@ -1,38 +1,61 @@
+<div class="container">
+  <h2 class="mt-4"><%= @offer.address %></h2>
 
-<% @offer.image_urls.each do |image_url| %>
-  <%= cl_image_tag image_url.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<!-- image grid hero -->
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @offer.address %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @offer.description %>
-</p>
-
-<p>
-  <strong>Instructions:</strong>
-  <%= @offer.instruction %>
-</p>
-
-<p>
-  <strong>date:</strong>
-  <%= @offer.date %>
-</p>
-
-<%= simple_form_for [ @offer, @booking ] do |f| %>
-    <%= f.submit "Create booking", class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to 'Back', offers_path %>
-
-<div class="d-flex justify-content-between my-4">
-  <div>
-    <%= link_to 'delete', offer_path(@offer), method: :delete, class: 'btn btn-flat', data: { confirm: 'Are you sure you want to delete this offer?' } %>
+<div class="image-grid mt-3">
+  <% @offer.image_urls.each_with_index do |image_url, index| %>
+    <% if index == 0 %>
+      <div class="large-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(image_url.key) %>')">
+      </div>
+     <% end %>
+  <% end %>
+  <div class="small-images">
+    <% @offer.image_urls.each_with_index do |image_url, index| %>
+      <% if index != 0 %>
+        <div class="small-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(image_url.key) %>')">
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
+
+<!-- middle section -->
+
+<div class="row mb-5 middle-section">
+  <div class="col-6">
+    <div class="offer-information">
+      <div class="offer-details mt-5 pb-3">
+        <h4><%= @offer.user.name %> has 15 plants</h4>
+        <p class="mt-3"><%= @offer.description %></p>
+      </div>
+      <div class="offer-instruction mt-3">
+        <h4 class="mt-3">Instructions</h4>
+        <p class="mt-3"><%= @offer.instruction %></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- booking card -->
+
+  <div class="col-4 booking-card">
+      <%#= simple_form_for [ @offer, @booking ] do |f| %>
+          <%#= f.submit "Create booking", class: "btn btn-primary" %>
+      <%# end %>
+      <h4 class="text-center"><%= @offer.date %></h4>
+      <div class="row price-info">
+        <div class="price-description col-7">
+          <p>If plants are still alive you will be rewarded with:</p>
+        </div>
+        <div class="price col-3">
+          <h2> <%= @offer.price %>€</h2>
+        </div>
+        <div class="create-booking col-12">
+          <%= simple_form_for [ @offer, @booking ] do |f| %>
+              <%= f.submit "Book this job", class: "btn btn-block booking-button" %>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>
+
