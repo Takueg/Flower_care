@@ -76,6 +76,8 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid #ddd;
+  border-radius: 16px;
   height: fit-content;
 }
 
@@ -99,11 +101,15 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+
+  a {
+    color: $dark-green;
+  }
 }
 
 .card-trip-infos .card-trip-user {
